@@ -11,6 +11,9 @@ void selection_sort(int *array, size_t size)
 {
 	unsigned int i = 0, j = 1;
 	int least, aux, least_index;
+	
+	if (array == NULL)
+		return;
 
 	while (i < size - 1)
 	{
@@ -24,7 +27,7 @@ void selection_sort(int *array, size_t size)
 			}
 			j++;
 		}
-		if (i != (unsigned int)least_index)
+		if (least_index < (int)size)
 		{
 			aux = array[i];
 			array[i] = least;
